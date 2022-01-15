@@ -5,7 +5,7 @@ class Game extends Phaser.Scene {
 
   }
   create() {
-    this.add.text(400,250, 'Game')
+    this.add.circle(400, 250, 10, 0xffffff, 1)
   }
 }
 
