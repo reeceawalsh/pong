@@ -54,14 +54,14 @@ class Game extends Phaser.Scene {
     if (Math.abs(diff) < 10) {
       return
     }
-    const aiSpeed = 0
+    const aiSpeed = 3
     if (diff < 0) {
     // Ball is above the paddle
       this.paddleRightVelocity.y = -aiSpeed
       if (this.paddleRightVelocity.y < -10) {
         this.paddleRightVelocity.y = -10
       }
-    }
+    } 
     else if (diff > 0) {
       // Ball is below the paddle
       this.paddleRightVelocity.y = aiSpeed
@@ -95,9 +95,11 @@ class Game extends Phaser.Scene {
   }
   
   resetBall() {
+        // Starting position
     this.ball.setPosition(400,250)
+        // Set speed
     const angle = Phaser.Math.Between(0, 360)
-    const vec = this.physics.velocityFromAngle(angle, 200)
+    const vec = this.physics.velocityFromAngle(angle, 1000)
     this.ball.body.setVelocity(vec.x, vec.y)
   }
 }
